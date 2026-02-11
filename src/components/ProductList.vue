@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import type { Product } from '@/types/product'
 import ProductCard from './ProductCard.vue'
 import FiltersBar from './FiltersBar.vue'
-
+import ProductDetailModal from './ProductDetailModal.vue'
 const { products } = defineProps<{
   products: Product[]
 }>()
@@ -11,6 +11,7 @@ const { products } = defineProps<{
 const searchQuery = ref('')
 const selectedCategory = ref('')
 const viewMode = ref<'grid' | 'list'>('grid')
+const selectedProduct = ref<Product | null>(null)
 
 const categories = computed(() => {
   const uniqueCategories = new Set(products.map((p) => p.category))
@@ -18,7 +19,9 @@ const categories = computed(() => {
 })
 const filteredProducts = computed(() => {
   return products.filter((product) => {
-    const matchesTitle = product.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+    const matchesTitle = product.title
+      .toLowerCase()
+      .includes(searchQuery.value.trim().toLowerCase())
     const matchesCategory =
       selectedCategory.value === '' || product.category === selectedCategory.value
     return matchesTitle && matchesCategory
@@ -64,6 +67,7 @@ const filteredProducts = computed(() => {
         :key="product.id"
         :product="product"
         view-mode="grid"
+        @click="selectedProduct = product"
       />
     </div>
 
@@ -74,7 +78,13 @@ const filteredProducts = computed(() => {
         :key="product.id"
         :product="product"
         view-mode="list"
+        @click="selectedProduct = product"
       />
     </div>
+    <ProductDetailModal
+      v-if="selectedProduct"
+      :product="selectedProduct"
+      :onClose="() => (selectedProduct = null)"
+    />
   </div>
 </template>
