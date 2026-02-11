@@ -1,48 +1,59 @@
-# poyesis-task
+## ⚡ How do I run this locally?
 
-This template should help get you started developing with Vue 3 in Vite.
+After cloning the repo, run the following commands:
 
-## Recommended IDE Setup
+# 1. Navigate into the project
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+cd poyesis-task
 
-## Recommended Browser Setup
+# 2. Install dependencies
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
 npm install
-```
 
-### Compile and Hot-Reload for Development
+# 3. Start development server
 
-```sh
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+# Product Catalog Lite - Vue 3 + TypeScript
 
-```sh
-npm run build
-```
+## A simple product browsing interface that fetches products from [FakeStoreAPI](https://fakestoreapi.com/), allowing users to search and filter by category. Includes grid/list views and a product detail modal.
 
-### Lint with [ESLint](https://eslint.org/)
+## 🛠 Tech Stack
 
-```sh
-npm run lint
-```
+- **Vue 3 + TypeScript** – For a modern, type-safe frontend
+- **Axios** – Clean and modern way for API requests
+- **TailwindCSS** – Quick and responsive styling + respecting that i only have 3 to 4 hours on the task
+- **Vite** – Fast development server
+
+---
+
+## 📦 Features
+
+- Display products in **grid or list layout**
+- **Search filter** (by product title)
+- **Category filter** (dropdown)
+- **Product detail modal** on click
+- Responsive and lightweight
+- Clean, reusable components
+
+---
+
+## 📝 Reflection Questions
+
+# 1. What would you improve if you had more time?
+
+If I had more time, I would enhance the UI with better accessibility, add more detailed product information, and implement lazy loading for images to improve performance. I could also add features like sorting and pagination for better usability.
+
+# 2. Describe a time you learned a new technology from scratch. What was it? How did you approach learning it? What challenges did you face?
+
+This is my first project using Vue 3. I approached it by reading the official documentation, building small components step by step, and experimenting with state management and props. The main challenge was understanding `v-model` with custom components and 2 way binding, but I solved it through trial and error and looking at examples online.
+Other than that, I found Vue.js somewhat similar to React.js, which I have mainly worked with.
+
+# 3. If this had 10,000 products, what performance issues might arise? How would you handle them?
+
+Rendering 10,000 products at once would cause loading and rendering issues. To handle this, I would implement pagination(backend fix mainly) or infinite scrolling to load products in chunks. Additionally, I would consider virtual scrolling or lazy loading images to reduce the initial render time.
+
+# Thank you and i hope we can proceed with the interview process as im very interest in this positon. please get back to me if you got any questions.
+
+**Chady Younes**
+chadyyounes2003@gmail.com
